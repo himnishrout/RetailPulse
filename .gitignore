@@ -1,0 +1,39 @@
+
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Secrets
+.env
+.env.*
+!.env.example
+!.envexample
+*.pem
+*.key
+
+# Local datasets and database files
+data/
+pgdata/
+postgres-data/
+*.sql.gz
+*.dump
+
+# macOS
+.DS_Store
+EOF
+# Large generated transaction exports
+outputs/sales_explorer.csv
+outputs/fct_transactions.csv
+
+outputs/fct_transactions.csv
+outputs/sales_explorer.csv
+data/
+.venv/
+venv/
+.env
+__pycache__/
+.DS_Store

@@ -1,0 +1,13 @@
+check,value
+raw_rows,1067371.0
+clean_rows,1027016.0
+excluded_rows,40355.0
+exact_duplicate_rows,34335.0
+invalid_core_rows,6207.0
+positive_cancellation_rows,1.0
+missing_or_invalid_customer_raw_rows,243007.0
+anonymous_clean_rows,229201.0
+return_lines,19103.0
+identified_customers,5878.0
+repeat_customer_share,0.7238856753997959
+identified_clean_row_share,0.7768282091028766

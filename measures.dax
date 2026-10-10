@@ -1,0 +1,13 @@
+// Create each measure separately; tables use exported filename stems.
+Gross Sales = CALCULATE(SUM(fct_transactions[line_revenue]), fct_transactions[is_sale] = TRUE())
+Return Credits = -CALCULATE(SUM(fct_transactions[line_revenue]), fct_transactions[is_return] = TRUE())
+Net Revenue = SUM(fct_transactions[line_revenue])
+Purchase Orders = CALCULATE(DISTINCTCOUNT(fct_transactions[invoice]), fct_transactions[is_sale] = TRUE())
+AOV = DIVIDE([Gross Sales], [Purchase Orders])
+Active Identified Customers = CALCULATE(DISTINCTCOUNT(fct_transactions[customer_id]), fct_transactions[is_sale] = TRUE(), fct_transactions[customer_id] <> BLANK())
+Sale Units = CALCULATE(SUM(fct_transactions[quantity]), fct_transactions[is_sale] = TRUE())
+Return Value Ratio = DIVIDE([Return Credits], [Gross Sales])
+Prior Month Net = CALCULATE([Net Revenue], DATEADD(dim_dates[date], -1, MONTH))
+Net Revenue MoM = DIVIDE([Net Revenue] - [Prior Month Net], [Prior Month Net])
+Retention = DIVIDE(SUM(cohort_retention[active_customers]), SUM(cohort_retention[cohort_size]))
+Scored Customers = COUNTROWS(customer_scores)

@@ -1,0 +1,171 @@
+{
+  "target": "positive valid purchase in [snapshot,snapshot+90 days)",
+  "train_snapshot": "2011-03-12 00:00:00",
+  "validation_snapshot": "2011-06-11 00:00:00",
+  "test_snapshot": "2011-09-10 00:00:00",
+  "features": [
+    "recency_days",
+    "tenure_days",
+    "orders",
+    "spend",
+    "aov",
+    "products",
+    "orders_30",
+    "orders_90",
+    "spend_90",
+    "return_lines"
+  ],
+  "selected_by_validation_average_precision": "gradient_boosting",
+  "validation": {
+    "logistic": {
+      "n": 4976,
+      "positive_rate": 0.3195337620578778,
+      "average_precision": 0.7098115786653152,
+      "roc_auc": 0.8146652698681587,
+      "brier": 0.15609062945207772,
+      "precision_at_10pct": 0.8755020080321285,
+      "lift_at_10pct": 2.739935844004951,
+      "precision_0_5": 0.6783320923306031,
+      "recall_0_5": 0.5729559748427673,
+      "f1_0_5": 0.6212069553358336,
+      "confusion_matrix_0_5": [
+        [
+          2954,
+          432
+        ],
+        [
+          679,
+          911
+        ]
+      ]
+    },
+    "gradient_boosting": {
+      "n": 4976,
+      "positive_rate": 0.3195337620578778,
+      "average_precision": 0.7123576379788462,
+      "roc_auc": 0.8156392210619384,
+      "brier": 0.1532130146868259,
+      "precision_at_10pct": 0.8855421686746988,
+      "lift_at_10pct": 2.7713571266196864,
+      "precision_0_5": 0.7250437828371279,
+      "recall_0_5": 0.5207547169811321,
+      "f1_0_5": 0.6061493411420205,
+      "confusion_matrix_0_5": [
+        [
+          3072,
+          314
+        ],
+        [
+          762,
+          828
+        ]
+      ]
+    }
+  },
+  "test": {
+    "constant": {
+      "n": 5281,
+      "positive_rate": 0.4336299943192577,
+      "average_precision": 0.4336299943192577,
+      "roc_auc": 0.5,
+      "brier": 0.25262900018208373,
+      "precision_at_10pct": 0.45746691871455575,
+      "lift_at_10pct": 1.054970654031253,
+      "precision_0_5": 0.0,
+      "recall_0_5": 0.0,
+      "f1_0_5": 0.0,
+      "confusion_matrix_0_5": [
+        [
+          2991,
+          0
+        ],
+        [
+          2290,
+          0
+        ]
+      ]
+    },
+    "recency_rule": {
+      "n": 5281,
+      "positive_rate": 0.4336299943192577,
+      "average_precision": 0.685900627204465,
+      "roc_auc": 0.763196065635042,
+      "brier": 0.22813182988974748,
+      "precision_at_10pct": 0.7693761814744802,
+      "lift_at_10pct": 1.7742688272343798,
+      "precision_0_5": 0.7229862475442044,
+      "recall_0_5": 0.4820960698689956,
+      "f1_0_5": 0.5784647629028032,
+      "confusion_matrix_0_5": [
+        [
+          2568,
+          423
+        ],
+        [
+          1186,
+          1104
+        ]
+      ]
+    },
+    "logistic": {
+      "n": 5281,
+      "positive_rate": 0.4336299943192577,
+      "average_precision": 0.7541607731778539,
+      "roc_auc": 0.790277382365437,
+      "brier": 0.1922854808947364,
+      "precision_at_10pct": 0.9073724007561437,
+      "lift_at_10pct": 2.092503776590915,
+      "precision_0_5": 0.7627355198883461,
+      "recall_0_5": 0.47729257641921397,
+      "f1_0_5": 0.5871608917539619,
+      "confusion_matrix_0_5": [
+        [
+          2651,
+          340
+        ],
+        [
+          1197,
+          1093
+        ]
+      ]
+    },
+    "gradient_boosting": {
+      "n": 5281,
+      "positive_rate": 0.4336299943192577,
+      "average_precision": 0.7605413298525507,
+      "roc_auc": 0.786873794600687,
+      "brier": 0.19715093817268295,
+      "precision_at_10pct": 0.9187145557655955,
+      "lift_at_10pct": 2.1186600737983015,
+      "precision_0_5": 0.8266666666666667,
+      "recall_0_5": 0.4331877729257642,
+      "f1_0_5": 0.5684813753581662,
+      "confusion_matrix_0_5": [
+        [
+          2783,
+          208
+        ],
+        [
+          1298,
+          992
+        ]
+      ]
+    }
+  },
+  "training_seconds": {
+    "logistic": 0.7142962079960853,
+    "gradient_boosting": 0.6918539160105865
+  },
+  "paired_bootstrap_AP_difference_vs_recency_95pct": [
+    0.058048772908840446,
+    0.08971870284297653
+  ],
+  "test_unique_customers": 5281,
+  "customer_overlap_allowed": true,
+  "limitations": [
+    "Customers may appear across periods: estimates existing-customer future performance, not unseen-customer generalization.",
+    "One final temporal holdout; bootstrap does not measure seasonal or future-market variation.",
+    "Recency rule probabilities are heuristic; its ranking is the primary comparison.",
+    "Observed repeat purchases are not campaign response or causal uplift."
+  ]
+}

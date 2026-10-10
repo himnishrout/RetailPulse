@@ -1,0 +1,23 @@
+{
+  "raw_rows": 1067371,
+  "clean_rows": 1027016,
+  "excluded_rows": 40355,
+  "exact_duplicate_rows": 34335,
+  "invalid_core_rows": 6207,
+  "positive_cancellation_rows": 1,
+  "missing_or_invalid_customer_raw_rows": 243007,
+  "anonymous_clean_rows": 229201,
+  "return_lines": 19103,
+  "date_min": "2009-12-01 07:45:00",
+  "date_max": "2011-12-09 12:50:00",
+  "exclusion_counts": {
+    "retained": 1027016,
+    "exact_duplicate": 34335,
+    "invalid_core_fields": 6019,
+    "positive_cancellation": 1
+  },
+  "identified_customers": 5878,
+  "repeat_customer_share": 0.7238856753997959,
+  "identified_clean_row_share": 0.7768282091028766,
+  "input_sha256": "572e36277c2390fbfde10664750731e0a86f55e33470d91919085f0408e67bfb"
+}
